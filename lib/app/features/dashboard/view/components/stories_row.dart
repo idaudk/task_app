@@ -5,9 +5,8 @@ class _StoriesRow extends GetView<DashboardController> {
 
   @override
   Widget build(BuildContext context) {
-    return
-    Padding(
-      padding: const EdgeInsets.all(8.0),
+    return Padding(
+      padding: EdgeInsets.only(left: 20.w),
       child: ListView.builder(
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
@@ -17,44 +16,44 @@ class _StoriesRow extends GetView<DashboardController> {
               child: SlideAnimation(
                 begin: Offset(100, 0),
                 child: Padding(
-                    padding:  EdgeInsets.only(right: 10.w),
-                    child: Center(
+                  padding: EdgeInsets.only(right: 15.w),
+                  child: Center(
+                    child: CircleAvatar(
+                      backgroundColor: AppBasicTheme().primaryColor,
+                      foregroundColor: Colors.white,
+                      radius: 44,
                       child: CircleAvatar(
-                        backgroundColor: Colors.green,
-                        foregroundColor: Colors.white,
-                        radius: 44,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.grey.withOpacity(0.3),
-                          radius: 40,
-                          child: ClipOval(
-
-                            child: Image.network(
-
-                                controller.imagesList[index].downloadUrl!, height: 300, width: 300, fit: BoxFit.cover,
-
-                              loadingBuilder: (BuildContext context,
-                                  Widget child,
-                                  ImageChunkEvent? loadingProgress) {
-                                if (loadingProgress == null)
-                                  return FadeAnimation(child: child);
-                                return Center(
-                                  child: Shimmer.fromColors(child: CircleAvatar( radius: 40,), baseColor: Colors.white, highlightColor: Colors.white70),
-                                );
-                              }),
-                            //NetworkImage
-
-                          ), //CircleAvatar
+                        backgroundColor: Colors.grey.withOpacity(0.3),
+                        radius: 40,
+                        child: ClipOval(
+                          child: Image.network(
+                              controller.imagesList[index].downloadUrl!,
+                              height: 300,
+                              width: 300,
+                              fit: BoxFit.cover, loadingBuilder:
+                                  (BuildContext context, Widget child,
+                                      ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null)
+                              return FadeAnimation(child: child);
+                            return Center(
+                              child: Shimmer.Shimmer.fromColors(
+                                  child: CircleAvatar(
+                                    radius: 40,
+                                  ),
+                                  baseColor: Colors.white,
+                                  highlightColor: Colors.white70),
+                            );
+                          }),
+                          //NetworkImage
                         ), //CircleAvatar
                       ), //CircleAvatar
-                    ),
+                    ), //CircleAvatar
+                  ),
                 ),
               ),
             );
           }),
     );
-
-
-
   }
 }
 

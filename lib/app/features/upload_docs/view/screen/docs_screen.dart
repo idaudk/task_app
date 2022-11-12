@@ -25,55 +25,57 @@ class DocsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // resizeToAvoidBottomInset: false,
-      body: SizedBox(
-          height: Get.height,
-          width: Get.width,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: SingleChildScrollView(
-                    physics: BouncingScrollPhysics(),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 120.h,
-                        ),
-                        _HeaderText(),
-                        SizedBox(
-                          height: 30.h,
-                        ),
-                        _ProgressIndicator(),
-                        SizedBox(
-                          height: 50.h,
-                        ),
-                        _ProfilePicField(),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        _DrivingLicenseField(),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        _CertificateField(),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        _PassportField(),
-                        SizedBox(
-                          height: 50.h,
-                        ),
-                        _DoneButton()
-                      ],
-                    ),
+      body: Container(
+        width: Get.width,
+        height: Get.height,
+        color: AppBasicTheme().backgroundColor,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 120.h,
+                      ),
+                      _HeaderText(),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      _ProgressIndicator(),
+                      SizedBox(
+                        height: 50.h,
+                      ),
+                      _ProfilePicField(),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      _DrivingLicenseField(),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      _CertificateField(),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      _PassportField(),
+                      SizedBox(
+                        height: 50.h,
+                      ),
+                      _DoneButton()
+                    ],
                   ),
-                )
-              ],
-            ),
-          )),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

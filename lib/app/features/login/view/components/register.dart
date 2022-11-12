@@ -1,16 +1,16 @@
-part of docs_view;
+part of login_view;
 
-class _HeaderText extends StatelessWidget {
-  const _HeaderText({Key? key}) : super(key: key);
+class _RegisterButton extends StatelessWidget {
+  const _RegisterButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("Upload Documents",
+        Text("Register Here",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 33.r,
+                fontSize: 20.r,
                 color: Colors.white)),
       ],
     );

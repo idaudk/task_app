@@ -39,21 +39,23 @@ class _ProfilePicField extends GetView<DocsController> {
                 ),
               ),
             )
-          : controller.viewDocsHandler(fileType: 'img', file: controller.profileImage!),
+          : controller.viewDocsHandler(
+              fileType: 'img', file: controller.profileImage!),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.h),
         height: 50.h,
         width: Get.width,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.blueGrey.withOpacity(0.2)),
+            borderRadius: BorderRadius.circular(50), color: Colors.white),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Profile Picture'),
+            Text(
+              'Profile Picture',
+              style: TextStyle(fontSize: 16.r),
+            ),
             GetBuilder<DocsController>(
                 id: "img_field",
-
                 init: DocsController(),
                 builder: (controller) => controller.profileImage != null
                     ? ClipRRect(

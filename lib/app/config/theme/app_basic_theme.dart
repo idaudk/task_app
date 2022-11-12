@@ -14,33 +14,37 @@ Map<int, Color> primarycolor = {
 };
 
 class AppBasicTheme {
-  final primaryColor = Color.fromRGBO(208, 218, 83, 1);
-  final supportingColorOne = Color(0xFF22A3B0);
+  final primaryColor = Color(0xFF00818A);
+  final primaryColorLight = Color(0xFF216583);
+  final primaryColorDark = Color(0xFF293462);
+  final backgroundColor = Color(0xFF293462);
 
-  final secondaryColor = Color(0xFFF1d0630);
-  final secondartColorTwo = Color(0xFF7F39C5);
-  final offwhiteColor = Color(0xFFFfefffe);
-  final primarycolorTwo = Color(0xFFF85D26A);
-  final greyblue = Color(0xffebf2f8);
+  // final secondartColorTwo = Color(0xFF7F39C5);
+  // final offwhiteColor = Color(0xFFFfefffe);
+  // final primarycolorTwo = Color(0xFFF85D26A);
+  // final greyblue = Color(0xffebf2f8);
 
-
+  // backgroundColor: Color(0xFF293462),
+  //   primaryColor: Color(0xFF00818A),
+  //   primaryColorLight: Color(0xFF216583),
+  //   primaryColorDark: Color(0xFF293462),
 
   // var primaryColor = Color(0xff0ec874);
 
   static ThemeData getThemeData() {
     return ThemeData(
       fontFamily: 'Manrope',
-      primaryColor: Color.fromRGBO(127, 57, 197, 1),
-      primarySwatch: MaterialColor(0xFF0ec874, primarycolor),
+      primaryColor: AppBasicTheme().primaryColor,
+      primarySwatch: MaterialColor(0xFF293462, primarycolor),
       textTheme: TextTheme(
         bodyText2: TextStyle(color: Colors.grey[800]),
       ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      // appBarTheme: const AppBarTheme(
+      //   backgroundColor: Color(0xFF293462),
+      //   elevation: 0,
+      // ),
       progressIndicatorTheme:
-      ProgressIndicatorThemeData(color: AppBasicTheme().secondartColorTwo),
+          ProgressIndicatorThemeData(color: AppBasicTheme().primaryColor),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: Colors.grey[200],
@@ -65,7 +69,7 @@ class AppBasicTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          primary: AppBasicTheme().secondartColorTwo,
+          primary: AppBasicTheme().primaryColor,
           onPrimary: Colors.white,
           textStyle: TextStyle(color: Colors.white),
           minimumSize: const Size(double.infinity, 55),

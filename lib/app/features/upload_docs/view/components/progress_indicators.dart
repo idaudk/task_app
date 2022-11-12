@@ -18,14 +18,13 @@ class _ProgressIndicator extends GetView<DocsController> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: controller.profileImage == null
-                  ? AppBasicTheme().primaryColor
-                  : AppBasicTheme().primarycolorTwo,
+                  ? Colors.white.withOpacity(0.5)
+                  : AppBasicTheme().primaryColor,
             ),
           ),
         ),
         GetBuilder<DocsController>(
           id: "license_field",
-
           init: DocsController(),
           builder: (_) => Container(
             width: 50.w,
@@ -33,14 +32,13 @@ class _ProgressIndicator extends GetView<DocsController> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: controller.drivingLicense == null
-                  ? AppBasicTheme().primaryColor
-                  : AppBasicTheme().primarycolorTwo,
+                  ? Colors.white.withOpacity(0.5)
+                  : AppBasicTheme().primaryColor,
             ),
           ),
         ),
         GetBuilder<DocsController>(
           id: "certificate_field",
-
           init: DocsController(),
           builder: (_) => Container(
             width: 50.w,
@@ -48,8 +46,8 @@ class _ProgressIndicator extends GetView<DocsController> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: controller.certificate == null
-                  ? AppBasicTheme().primaryColor
-                  : AppBasicTheme().primarycolorTwo,
+                  ? Colors.white.withOpacity(0.5)
+                  : AppBasicTheme().primaryColor,
             ),
           ),
         ),
@@ -62,8 +60,8 @@ class _ProgressIndicator extends GetView<DocsController> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: controller.passport == null
-                  ? AppBasicTheme().primaryColor
-                  : AppBasicTheme().primarycolorTwo,
+                  ? Colors.white.withOpacity(0.5)
+                  : AppBasicTheme().primaryColor,
             ),
           ),
         ),

@@ -5,140 +5,117 @@ class _FeedBox extends GetView<DashboardController> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (_, index){
-      return FadeAnimation(
-        child: InkWell(
-          onTap: () {
-            // controller.gotoDetailsScreen(
-            //     deliveryId: singleDeliveryDetails.id.toString());
-          },
-          onLongPress: () {},
-          child: Container(
-            margin: EdgeInsets.only(bottom: 15.h),
-            width: Get.width,
-            constraints: BoxConstraints(
-              maxHeight: double.infinity,
-            ),
-            // height: 120.h,
-            // padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 20.w),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: AppBasicTheme().secondartColorTwo.withOpacity(0.2)),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Container(
-                  //   color: Colors.white,
-                  //   padding:
-                  //       EdgeInsets.symmetric(vertical: 15.h, horizontal: 20.w),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: [
-                  //       Text(
-                  //         'New Order',
-                  //         style: TextStyle(
-                  //             fontWeight: FontWeight.bold,
-                  //             fontSize: 20.r,
-                  //             color: AppBasicTheme().primarycolorTwo),
-                  //       )
-                  //     ],
-                  //   ),
-                  // ),
-                  Padding(
-                    padding:
-                    EdgeInsets.symmetric(vertical: 15.h, horizontal: 20.w),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                            flex: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Order Detials',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 14.r),
-                                ),
-                                SizedBox(
-                                  height: 8.h,
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      singleDeliveryDetails
-                                          .order?.fkCustomer?.firstName ??
-                                          'No Name',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 17.r),
-                                    ),
-                                    SizedBox(
-                                      width: 5.w,
-                                    ),
-                                    Text(
-                                      singleDeliveryDetails
-                                          .order?.fkCustomer?.lastName ??
-                                          ' ',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 17.r),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5.h,
-                                ),
-                                Text(
-                                  'Payment Type: ' +
-                                      singleDeliveryDetails.order!.paymentType
-                                          .toString(),
-                                  style: TextStyle(fontSize: 11.r),
-                                ),
-                                Text(
-                                  'Order placed: ' +
-                                      Jiffy(singleDeliveryDetails.acceptedOn
-                                          .toString())
-                                          .MMMEd,
-                                  style: TextStyle(fontSize: 11.r),
-                                ),
-                              ],
-                            )),
-                        Expanded(
-                            flex: 3,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'New Order',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 17.r,
-                                      color: AppBasicTheme().secondartColorTwo),
-                                ),
-                                SizedBox(
-                                  height: 5.h,
-                                ),
-                                
-                              ],
-                            )),
-                      ],
-                    ),
+    return SlideAnimation(
+      begin: Offset(0, 200),
+      child: ListView.builder(
+          physics: BouncingScrollPhysics(),
+          itemCount: controller.imagesList.length,
+          itemBuilder: (_, index) {
+            return FadeAnimation(
+              child: InkWell(
+                onTap: () {},
+                onLongPress: () {},
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 15.h),
+                  width: Get.width,
+                  constraints: BoxConstraints(
+                    maxHeight: double.infinity,
                   ),
-
-                ],
+                  decoration: BoxDecoration(),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Row(
+                          children: [
+                            FadeAnimation(
+                              child: Center(
+                                child: CircleAvatar(
+                                  backgroundColor: AppBasicTheme().primaryColor,
+                                  foregroundColor: Colors.white,
+                                  radius: 20,
+                                  child: CircleAvatar(
+                                    backgroundColor:
+                                        Colors.grey.withOpacity(0.3),
+                                    radius: 20,
+                                    child: ClipOval(
+                                      child: Image.network(
+                                          controller
+                                              .imagesList[index].downloadUrl!,
+                                          height: 200.h,
+                                          width: 200.w,
+                                          fit: BoxFit.cover, loadingBuilder:
+                                              (BuildContext context,
+                                                  Widget child,
+                                                  ImageChunkEvent?
+                                                      loadingProgress) {
+                                        if (loadingProgress == null)
+                                          return FadeAnimation(child: child);
+                                        return Center(
+                                          child: Shimmer.Shimmer.fromColors(
+                                              child: CircleAvatar(
+                                                radius: 21,
+                                              ),
+                                              baseColor: Colors.white,
+                                              highlightColor: Colors.white70),
+                                        );
+                                      }),
+                                      //NetworkImage
+                                    ), //CircleAvatar
+                                  ), //CircleAvatar
+                                ), //CircleAvatar
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            Text(
+                              controller.imagesList[index].author!,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Container(
+                        width: Get.width,
+                        height: Get.height * 0.3,
+                        child: Image.network(
+                          controller.imagesList[index].downloadUrl!,
+                          fit: BoxFit.cover,
+                          filterQuality: FilterQuality.low,
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null)
+                              return FadeAnimation(child: child);
+                            return SkeletonItem(
+                                child: Column(
+                              children: [
+                                SkeletonAvatar(
+                                  style: SkeletonAvatarStyle(
+                                    borderRadius: BorderRadius.circular(0),
+                                    shape: BoxShape.rectangle,
+                                    padding: EdgeInsets.all(0),
+                                    height: Get.height * 0.25,
+                                    randomHeight: false,
+                                    randomWidth: false,
+                                    width: Get.width,
+                                  ),
+                                ),
+                              ],
+                            ));
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
-      );
-    });
+            );
+          }),
+    );
   }
 }
-

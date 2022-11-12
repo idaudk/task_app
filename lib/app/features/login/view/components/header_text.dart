@@ -7,9 +7,11 @@ class _HeaderText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("Login Now", style: Theme.of(context).textTheme.headline5),
-        SizedBox(height: 5),
-        Text("Please enter your email and password to login")
+        Text("Log In",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30.r,
+                color: Colors.white)),
       ],
     );
   }
