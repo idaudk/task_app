@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (context, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.socket,
-        // initialRoute: AppPages.initial,
+        // initialRoute: Routes.socket,
+        initialRoute: AppPages.initial,
         theme: AppBasicTheme.getThemeData(),
         getPages: AppPages.routes,
       ),
