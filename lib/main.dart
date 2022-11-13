@@ -8,13 +8,8 @@ import 'app/config/theme/app_basic_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // await initServices();
   runApp(MyApp());
 }
-
-// Future<void> initServices() async {
-//   await Get.putAsync<ApiBackendService>(() async => ApiBackendService());
-// }
 
 class MyApp extends StatelessWidget {
   @override
@@ -22,6 +17,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (context, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        // initialRoute: Routes.socket,
         initialRoute: AppPages.initial,
         theme: AppBasicTheme.getThemeData(),
         getPages: AppPages.routes,

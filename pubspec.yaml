@@ -42,6 +42,8 @@ dependencies:
   pdf_render: ^1.0.16
   shimmer: ^2.0.0
   skeletons: ^0.0.3
+  web_socket_channel: ^2.2.0
+  bubble: ^1.2.1
 
 
   

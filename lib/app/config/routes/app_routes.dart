@@ -5,6 +5,7 @@ abstract class Routes {
   static const uploadDocs = _Paths.uploadDocs;
   static const viewDocs = _Paths.viewDocs;
   static const dashboard = _Paths.dashboard;
+  static const socket = _Paths.socket;
 }
 
 abstract class _Paths {
@@ -12,4 +13,5 @@ abstract class _Paths {
   static const uploadDocs = '/upload_docs/';
   static const viewDocs = '/view_docs/';
   static const dashboard = '/dashboard/';
+  static const socket = '/socket/';
 }

@@ -21,6 +21,25 @@ class DashboardScreen extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      floatingActionButton: InkWell(
+        onTap: () => controller.gotoSocketScreen(),
+        child: Container(
+          height: 50,
+          width: 150.w,
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          decoration: BoxDecoration(
+              color: AppBasicTheme().primaryColor,
+              borderRadius: BorderRadius.circular(50)),
+          alignment: Alignment.center,
+          child: Text(
+            'Goto Web Socket Screen',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 10.r,
+                color: Colors.white),
+          ),
+        ),
+      ),
       // resizeToAvoidBottomInset: false,
       body: Container(
           color: Color(0xffebf2f8),
