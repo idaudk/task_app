@@ -10,7 +10,7 @@ class _RegisterButton extends StatelessWidget {
         Text("Register Here",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20.r,
+                fontSize: 18.r,
                 color: Colors.white)),
       ],
     );

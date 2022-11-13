@@ -8,7 +8,10 @@ class _ForgetPassword extends StatelessWidget {
     return Column(
       children: [
         Text("Forget Password?",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.r, color: Colors.white)),
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 13.r,
+                color: Colors.grey.withOpacity(0.5))),
       ],
     );
   }

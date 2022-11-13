@@ -8,10 +8,10 @@ import 'package:skeletons/skeletons.dart';
 import 'package:task_app/app/features/dashboard/controller/dashboard_controller.dart';
 import 'package:task_app/app/ultis/animations/animations.dart';
 import '../../../../config/theme/app_basic_theme.dart';
-import '../../../../ultis/animations/slide_animation.dart';
 
 part '../components/feed_box.dart';
 part '../components/stories_row.dart';
+part '../components/float_botton.dart';
 
 class DashboardScreen extends GetView<DashboardController> {
   DashboardScreen({Key? key}) : super(key: key);
@@ -21,25 +21,7 @@ class DashboardScreen extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      floatingActionButton: InkWell(
-        onTap: () => controller.gotoSocketScreen(),
-        child: Container(
-          height: 50,
-          width: 150.w,
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          decoration: BoxDecoration(
-              color: AppBasicTheme().primaryColor,
-              borderRadius: BorderRadius.circular(50)),
-          alignment: Alignment.center,
-          child: Text(
-            'Goto Web Socket Screen',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 10.r,
-                color: Colors.white),
-          ),
-        ),
-      ),
+      floatingActionButton: _FloatingButton(),
       // resizeToAvoidBottomInset: false,
       body: Container(
           color: Color(0xffebf2f8),

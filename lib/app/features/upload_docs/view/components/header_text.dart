@@ -10,7 +10,7 @@ class _HeaderText extends StatelessWidget {
         Text("Upload Documents",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 33.r,
+                fontSize: 30.r,
                 color: Colors.white)),
       ],
     );

@@ -6,6 +6,7 @@ class _HeaderText extends GetView<SocketController> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
           flex: 4,
@@ -13,7 +14,7 @@ class _HeaderText extends GetView<SocketController> {
             "Web Socket Screen",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20.r,
+                fontSize: 18.r,
                 color: Colors.white),
           ),
         ),
