@@ -24,7 +24,6 @@ class LoginScreen extends GetView<LoginController> {
     return Scaffold(
         backgroundColor: AppBasicTheme().backgroundColor,
         body: CustomScrollView(
-          physics: BouncingScrollPhysics(),
           slivers: [
             SliverList(
                 delegate: SliverChildListDelegate([

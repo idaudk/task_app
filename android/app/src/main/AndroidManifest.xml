@@ -2,6 +2,8 @@
     package="com.productbox.task_app">
     <uses-permission android:name="android.name.READ_EXTERNAL_STORAGE"/>
    <uses-permission android:name="android.name.CAMERA"/>
+   <uses-permission android:name="android.name.INTERNET"/> 
+   
    <application
         android:label="task_app"
         android:name="${applicationName}"
