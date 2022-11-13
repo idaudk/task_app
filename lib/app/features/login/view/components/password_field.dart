@@ -7,16 +7,14 @@ class _PasswordField extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Obx(
           () => TextFormField(
+            
         keyboardType: TextInputType.visiblePassword,
         obscureText: controller.isObscure.value,
         controller: controller.passwordController,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(
           hintText: "Password",
-          prefixIcon: Icon(
-            Icons.lock_outline,
-            color: Colors.grey,
-          ),
+          
           suffixIcon: IconButton(
               icon: Icon(controller.isObscure.value
                   ? Icons.visibility

@@ -15,7 +15,7 @@ class _HeaderText extends GetView<SocketController> {
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18.r,
-                color: Colors.white),
+                color: AppBasicTheme().backgroundColor),
           ),
         ),
         Expanded(
@@ -23,7 +23,9 @@ class _HeaderText extends GetView<SocketController> {
           child: Obx(
             () => Bubble(
               alignment: Alignment.center,
-              color: Color.fromRGBO(212, 234, 244, 1.0),
+              color: controller.status.value == 'connected'
+                  ? Color.fromRGBO(212, 234, 244, 1.0)
+                  : Colors.orange,
               child: Text(controller.status.value,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 11.0)),

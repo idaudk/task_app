@@ -9,7 +9,7 @@ class _ResponseBox extends GetView<SocketController> {
         width: Get.width,
         height: Get.width / 0.7,
         decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withOpacity(0.1),
             borderRadius: BorderRadius.circular(10)),
         padding: const EdgeInsets.all(12.0),
         child: GetBuilder<SocketController>(

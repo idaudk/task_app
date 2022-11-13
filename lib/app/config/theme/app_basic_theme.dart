@@ -18,18 +18,7 @@ class AppBasicTheme {
   final primaryColorLight = Color(0xFF216583);
   final primaryColorDark = Color(0xFF293462);
   final backgroundColor = Color(0xFF293462);
-
-  // final secondartColorTwo = Color(0xFF7F39C5);
-  // final offwhiteColor = Color(0xFFFfefffe);
-  // final primarycolorTwo = Color(0xFFF85D26A);
-  // final greyblue = Color(0xffebf2f8);
-
-  // backgroundColor: Color(0xFF293462),
-  //   primaryColor: Color(0xFF00818A),
-  //   primaryColorLight: Color(0xFF216583),
-  //   primaryColorDark: Color(0xFF293462),
-
-  // var primaryColor = Color(0xff0ec874);
+  final supportColor = Color.fromARGB(255, 45, 60, 119);
 
   static ThemeData getThemeData() {
     return ThemeData(

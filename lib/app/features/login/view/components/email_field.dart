@@ -14,21 +14,9 @@ class _EmailAddressField extends GetView<LoginController> {
             return 'Invalid Email';
           }
           return null;
-          // validateEmail(value);
-          // if(EmailValidator.validate(value!)) return "";
-          // return null;
-          // EmailValidator.validate(value!) ? null : "Please enter a valid email";
-          // if (value == null || value.trim() == "") return "";
-          // return null;
+          
         },
-        decoration: InputDecoration(
-
-
-
-            prefixIcon: Icon(
-              Icons.email_outlined,
-              color: Colors.grey,
-            ),
+        decoration: InputDecoration(      
             prefixStyle: TextStyle(color: Colors.grey, fontSize: 16),
             // prefixText: "+92 ",
             hintText: "Email Address"),
